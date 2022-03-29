@@ -14,7 +14,6 @@ exports.addToCart = async (request, response) => {
             return response.status(402).json(err);
 
         })
-
 }
 exports.viewcart = (request, response) => {
     let userId = request.params.userId;

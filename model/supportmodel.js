@@ -18,6 +18,6 @@ const supportSchema =new mongoose.Schema({
         type:Schema.Types.ObjectId
     } 
 });
-   // { timestamps: true };
+   
 
 module.exports =mongoose.model("supports",supportSchema);

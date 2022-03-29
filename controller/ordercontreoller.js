@@ -10,7 +10,6 @@ exports.getorder = (request, response) => {
         });
 }
 exports.add = (request, response, next) => {
-    //console.log(request.body);
     const errors = validationResult(request);
     if (!errors.isEmpty())
         return response.status(400).json({ errors: errors.array() });
@@ -33,5 +32,5 @@ exports.add = (request, response, next) => {
         .catch(err => {
             console.log(err);
             return response.status(403).json({ message: "Oops! Something went wrong.." });
-        })
+        });
 }

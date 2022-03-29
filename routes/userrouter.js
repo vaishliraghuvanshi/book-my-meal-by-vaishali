@@ -3,26 +3,13 @@ const router = express.Router();
 const UserController = require('../controller/usercontreoller');
 const { body } = require('express-validator');
 
-router.post("/add", 
-    body('userName').not().isEmpty(),
-    body('email').not().isEmpty(),
-    body('password').isLength(5),
-    body('mobile').isLength(10),
-    body('gender').not().isEmpty(),
-   // body('categoryId').not().isEmpty(),
+router.post('/signup', body("email").isEmail(),
+    body("password").isLength(5),
+    UserController.signup);
 
-    UserController.add
-);
-router.post("/delete-user", UserController.deleteuser);
+router.post('/signin', body("email").isEmail(),
+    body("password").isLength(5),
+    UserController.signin);
 
-router.post("/update", 
-    body('userName').not().isEmpty(),
-    body('email').not().isEmpty(),
-    body('password').isLength(5),
-    body('mobile').isLength(10),
-    body('gender').not().isEmpty(),
-    //body('categoryId').not().isEmpty()
-
-     UserController.update
-);
+router.post('/update',UserController.updateprofile);
 module.exports = router;

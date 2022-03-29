@@ -56,25 +56,21 @@ exports.add = (request, response, next) => {
         return response.status(400).json({ errors: errors.array() });
 
     Product.create({
-
-
         productName: request.body.productName,
         productPrice: request.body.productPrice*1,
         productQty: request.body.productQty*1,
         productDescription: request.body.productDescription,
-        productDiscount: request.body.productDiscount*1,
+        productDiscount: request.body.productDiscount,
         productrating:request.body.productrating,
+        stock:request.body.stock,
         categoryId:request.body.categoryId,
         productImageUrl: "http://localhost:3000/images/" + request.file.filename
-
-
-
     })
         .then(result => {
-
             return response.status(201).json(result);
         })
         .catch(err => {
+            console.log("error in catch ",err)
             return response.status(403).json({ message: "Oops! Something went wrong.." });
         })
 }  

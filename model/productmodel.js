@@ -36,6 +36,10 @@ const productSchema = new mongoose.Schema({
          min:1,
          max:5,
     },
+    stock:{
+        type:String,
+        default: "Available",
+    },
     categoryId: Schema.Types.ObjectId
 });
 module.exports = mongoose.model("products", productSchema);

@@ -22,7 +22,6 @@ exports.add = (request, response, next) => {
              userid : request.body.userid,
              productid:request.body.productid
              
-
     })
         .then(result => {
 

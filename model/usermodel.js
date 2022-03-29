@@ -23,8 +23,11 @@ const userSchema = new mongoose.Schema({
     },
     gender:{
         type:String,
-        required:true
+        required:true,
     },
-
+    Isblocked:{
+        type:Boolean,
+        default:false,
+    }
 })
 module.exports =mongoose.model("users",userSchema);

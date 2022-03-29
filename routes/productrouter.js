@@ -18,7 +18,8 @@ router.post("/add", upload.single('productImage'),
     body('productQty').not().isEmpty(),
     body('productDescription').not().isEmpty(),
     body('productDiscount').not().isEmpty(),
-   // body('productrating'),Number(),
+    body('productrating'),
+    body('stock'),
     body('categoryId').not().isEmpty(),
 
     productController.add
@@ -36,7 +37,7 @@ router.post("/update", upload.single('productImage'),
     body('productDiscount').not().isEmpty(),
     body('productrating'),
     body('categoryId').not().isEmpty(),
-
+    
      productController.update
 );
 module.exports = router;
