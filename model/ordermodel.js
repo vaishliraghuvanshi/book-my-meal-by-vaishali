@@ -7,9 +7,9 @@ const orderSchema = new  mongoose.Schema({
     orderQty:Number,
     currentDate:{
         type : Date,
-        default : Date.now(),
+        default : Date.now()
     
    },
    userId: Schema.Types.ObjectId,
 })
-module.exports = mongoose.model("orders", orderSchema);
+module.exports = mongoose.model("orders", orderSchema)
